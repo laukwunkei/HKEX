@@ -141,9 +141,6 @@ pycurl==7.43.0.6
 pydocstyle==6.0.0
 pyerfa==1.7.3
 PyExecJS==1.5.1
-pyflakes==2.2.0
-Pygments==2.8.1
-pylint==2.7.4
 pyls-black==0.4.6
 pyrsistent==0.17.3
 PySocks==1.7.1
