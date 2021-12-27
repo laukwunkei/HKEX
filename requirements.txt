@@ -135,7 +135,6 @@ psutil==5.8.0
 ptyprocess==0.7.0
 py==1.10.0
 py-mini-racer==0.6.0
-pycodestyle==2.6.0
 pycosat==0.6.3
 pycparser==2.20
 pycurl==7.43.0.6
