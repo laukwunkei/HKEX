@@ -86,6 +86,7 @@ def single_name_information(ticker, df, day):
     Extract repurchase information for a single stock
     including total repurchase stock, average repurchase price and percentage to common shares
     '''
+    print(df)
     single_name_df = pd.DataFrame()
     single_name_df = df.loc[df['Code'] == str(ticker)]
     if single_name_df.empty:
