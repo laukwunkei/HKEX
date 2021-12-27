@@ -1,0 +1,46 @@
+{%extends "bootstrap/base.html" %}
+
+{% block content %}
+
+<!-- Main jumbotron for a primary marketing message or call to action -->     
+        </br>
+          <div class="container">
+            <div class="main">
+                <div class="row">
+                  <div class="col-md-8" style="background-color:#e7a247">
+                          <h3 style="color:rgb(255, 255, 255)">Enter stock ticker and number of days traceback</h3>
+                            <p style="color:#fff"> E.g. Alibaba has ticker <ins>9988</ins></p>
+                            <form class="form-inline" method=POST action="{{ url_for('summary') }}" class="form-group">
+                                <div class="form-group mx-sm-3 mb-2">
+                                  <label for="inputpolarity" class="sr-only"> stock name </label>
+                                  <input type="text" class="form-control" name="stock" placeholder="ticker">
+                                </div>
+                                <div class="form-group mx-sm-3 mb-2">
+                                    <label for="inputpolarity" class="sr-only"> # days  </label>
+                                    <input type="text" class="form-control" name="day" placeholder="day">
+                                  </div>
+                                <button type="submit" class="btn btn-primary mb-2">Review summary</button>
+                                <button href="{{ url_for('restart')}}" type="button" class="btn btn-primary" > Refresh</a></button>
+                            </form> 
+                      <br/>
+                      
+                </div>      
+              </div>
+        
+      </div>
+      </div>
+      <p>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+         {% for message in messages %}
+           <div class="alert alert-success">
+            <strong>{{ message }}</strong>
+          </div>
+         {% endfor %}
+          {% endif %}
+        {% endwith %}
+       </p>
+    </br>
+
+
+{% endblock %}
