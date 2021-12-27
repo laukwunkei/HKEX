@@ -1,9 +1,6 @@
 akshare==1.2.99
 alabaster==0.7.12
 altair==4.1.0
-anaconda-client==1.7.2
-anaconda-navigator==2.0.3
-anaconda-project==0.9.1
 anyio==2.2.0
 appdirs==1.4.4
 applaunchservices==0.2.1
