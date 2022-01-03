@@ -11,12 +11,6 @@ Bootstrap(app)
 app.secret_key = 'dljsaklqk24e21cjn!Ew@@dsa5'
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
-# S3 config
-AWS_BUCKET_NAME = 'cheekybucket'
-AWS_ACCESS_KEY = 'AKIA2G3PNNUOCXY7HX72' 
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_DOMAIN = 'http://cheekybucket.s3.amazonaws.com/'
-
 # Backend
 from os import error
 from random import randrange
@@ -32,36 +26,6 @@ import matplotlib.pyplot as plt
 import matplotlib
 import locale
 matplotlib.use('Agg')
-
-import boto3, botocore
-
-s3 = boto3.client(
-    "s3",
-    aws_access_key_id=os.getenv('AWS_ACCESS_KEY'),
-    aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY')
-)
-
-def upload_file_to_s3(file, acl="public-read"):
-    filename = secure_filename(file.filename)
-    try:
-        s3.upload_fileobj(
-            file,
-            os.getenv("AWS_BUCKET_NAME"),
-            file.filename,
-            ExtraArgs={
-                "ACL": acl,
-                "ContentType": file.content_type
-            }
-        )
-
-    except Exception as e:
-        # This is a catch all exception, edit this part to fit your needs.
-        print("Something Happened: ", e)
-        return e
-    
-
-    # after upload file to s3 bucket, return filename of the uploaded file
-    return file.filename
 
 '''
 Web scraper for repurchase data
